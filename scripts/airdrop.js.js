@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 
-fetch('https://opensheet.elk.sh/2PACX-1vT943qVS4mINhlyhCENZ2TlwD75e7uvjSIdCtd97XMQ1R3aLcLO1zPOAvW-0LTDoPK1hvBxoLYtytcN/Sheet1')
+fetch('https://script.google.com/macros/s/AKfycbxB1eK89gWBtP2OaGjkabUiDih8bR5xN5ukgYv2OenApZ9-9v6SUqqIieiGldzI0Qlskw/exec')
   .then(res => res.json())
   .then(data => {
     const drop = data.find(d => d.id === id);
