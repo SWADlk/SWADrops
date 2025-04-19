@@ -1,0 +1,16 @@
+[
+  {
+    "id": "project-abc",
+    "name": "Project ABC",
+    "description": "Get 100 free tokens for joining Project ABC!",
+    "image": "images/ABC123XYZ.png",
+    "refLink": "https://airdrop-site.com/signup?ref=ABC123XYZ"
+  },
+  {
+    "id": "moon-token",
+    "name": "MoonToken Airdrop",
+    "description": "Earn 50 MOON tokens for free.",
+    "image": "images/moontoken.png",
+    "refLink": "https://moon.io/join?ref=MOON123"
+  }
+]
