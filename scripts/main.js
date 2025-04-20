@@ -2,6 +2,7 @@ fetch('https://script.google.com/macros/s/AKfycbxB1eK89gWBtP2OaGjkabUiDih8bR5xN5
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.airdrops-list');
+    container.innerHTML = ""; // clear old entries
     data.forEach(drop => {
       const card = document.createElement('div');
       card.className = 'airdrop-card';
