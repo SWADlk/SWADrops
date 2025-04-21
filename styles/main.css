@@ -168,3 +168,23 @@ footer {
   z-index: 999;
   text-align: center;
 }
+.airdrop-description {
+  text-align: left;
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.airdrop-description h2 {
+  color: #007bff;
+  margin-top: 1.5rem;
+}
+
+.airdrop-description ul, .airdrop-description ol {
+  margin-left: 1.5rem;
+}
+
+.airdrop-description a {
+  color: #007bff;
+  text-decoration: underline;
+}
