@@ -1,45 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Airdrop Hub</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWADrops - Airdrop Hub</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .airdrops-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+    .airdrop-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .airdrop-card:hover {
+      transform: scale(1.03);
+    }
+    .airdrop-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">🚀 SWADrops</a>
+
+  <nav class="navbar">
+    <div class="logo">🚀 SWADrops</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://t.me/SWADrops" target="_blank">Telegram</a>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-  <header class="hero">
-    <h1>Discover & Share the Best Crypto Airdrops</h1>
-    <p>Join top trending airdrops and earn free tokens using referral links.</p>
-    <a href="#airdrops" class="hero-btn">Explore Airdrops</a>
-    
-  </header>
+  </nav>
 
-  <section id="airdrops" class="airdrops-list"></section>
-<!-- Footer -->
-    <footer>
-        <div class="social-icons">
-            <a href="https://x.com/SWADrops" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://t.me/SWAD_99" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100080819571042" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://swadlk.github.io/SWADrops/" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
-        </div>
-        <p>&copy; 2025 SWADrops. Built with ❤️ for the crypto community.</p>
-    </footer>
+  <section class="airdrops-list">
+    <!-- Airdrops will be loaded here -->
+  </section>
 
-  <script src="scripts/main.js"></script>
+  <footer>
+    <p>&copy; 2025 SWADrops. All rights reserved.</p>
+  </footer>
+<script>
+  fetch('https://script.google.com/macros/s/AKfycbwxiw0R-XmhUUSpZ1PPrikXuzi6d6ikecqy4pkg5j1vCN19WjdmIGp4G5ZMBji9OHZ9/exec')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector('.airdrops-list');
+    container.innerHTML = '';
+
+    data.forEach(drop => {
+      const card = document.createElement('div');
+      card.className = 'airdrop-card';
+      card.innerHTML = `
+        <img src="${drop.image}" alt="${drop.name}" />
+        <h3>${drop.name}</h3>
+        <a href="airdrop.html?id=${drop.id}" class="detail-link">View Details</a>
+      `;
+      container.appendChild(card);
+    });
+  });
+</script>
 </body>
 </html>
