@@ -1,4 +1,4 @@
-fetch('https://script.google.com/macros/s/AKfycbxB1eK89gWBtP2OaGjkabUiDih8bR5xN5ukgYv2OenApZ9-9v6SUqqIieiGldzI0Qlskw/exec')
+fetch('https://script.google.com/macros/s/AKfycbwxiw0R-XmhUUSpZ1PPrikXuzi6d6ikecqy4pkg5j1vCN19WjdmIGp4G5ZMBji9OHZ9/exec')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.airdrops-list');
